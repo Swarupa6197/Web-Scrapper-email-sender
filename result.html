@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+</head>
+<body>
+  <h2>Scraping Results</h2>
+  <ul>
+    {% for item in data %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>📄 Report Options</h3>
+  <a href="/download/{{ pdf_file }}">Download PDF Report</a>
+
+  <form action="/email/{{ pdf_file }}" method="POST">
+    <input type="email" name="email" placeholder="Enter email" required>
+    <button type="submit">Send Report via Email</button>
+  </form>
+</body>
+</html>
